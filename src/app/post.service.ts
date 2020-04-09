@@ -45,16 +45,16 @@ export class PostService {
   }
 
 
-  getAllPosts():Observable<BlogPost[]>{
-    return this.http.get<BlogPost>(`https://guarded-bastion-43395.herokuapp.com/api/posts?page=1&perPage=${Number.MAX_SAFE_INTEGER}`)
+  getAllPosts(): Observable<BlogPost[]>{
+    return this.http.get<BlogPost[]>(`https://blooming-caverns-94898.herokuapp.com/api/posts?page=1&perPage=${Number.MAX_SAFE_INTEGER}`);
   }
 
-  newPost(data: BlogPost): Observable<any>{
-    return this.http.get<any>(`https://guarded-bastion-43395.herokuapp.com/api/posts`,data);
+  newPost(data: BlogPost): Observable<any> {
+    return this.http.post<any>(`https://arnin-blogapi.herokuapp.com/api/posts`, data);
   }
 
   updatePostById(id:string, data:BlogPost): Observable<any>{
-    return this.http.get<any>(`https://guarded-bastion-43395.herokuapp.com/api/posts/${id}`,data);
+    return this.http.put<any>(`https://guarded-bastion-43395.herokuapp.com/api/posts/${id}`,data);
   }
 
   deletePostById(id:string): Observable<any>{

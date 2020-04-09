@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { PostService } from '../post.service';
+import { Router } from '@angular/router';
+import { BlogPost } from '../BlogPost';
 @Component({
   selector: 'app-new-post',
   templateUrl: './new-post.component.html',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewPostComponent implements OnInit {
 
-  constructor() { }
+  blogPost:BlogPost = new BlogPost();
+  tags:string;
+
+
+  constructor(private data:PostService, private route:Router) { }
 
   ngOnInit(): void {
+  }
+
+  formSubmit(){
+    this.blogPost.tags = this.tags.split(',').map(tag=>tag.trim());
+    this.blogPost.isPrivate = false;
+    this.blogPost.postDate = new Date().toDateString();
+    this.blogPost.views=0;
+    this.data.newPost(this.blogPost).subscribe((data)=>this.route.navigate(['admin']));
   }
 
 }
