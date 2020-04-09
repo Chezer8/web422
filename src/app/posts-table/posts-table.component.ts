@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {PostService } from '../post.service';
-import {Router} from '@angular/router';
+import {PostService} from '../post.service';
+import {Router} from '@angular/router'
 import {BlogPost} from '../BlogPost';
-
 @Component({
   selector: 'app-posts-table',
   templateUrl: './posts-table.component.html',
@@ -10,12 +9,11 @@ import {BlogPost} from '../BlogPost';
 })
 export class PostsTableComponent implements OnInit {
 
-  blogPosts:Array<BlogPost> = [];
-
-  constructor(private data:PostService, private route:Router) { }
+  blogPosts: Array<BlogPost>=[];
+  constructor(private postService:PostService,private route:Router) { }
 
   ngOnInit(): void {
-    this.data.getAllPosts().subscribe((data)=> this.blogPosts=data);
+    this.postService.getAllPosts().subscribe((response)=>this.blogPosts=response);
   }
 
   rowClicked(e,id){
