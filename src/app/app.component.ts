@@ -16,7 +16,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title:string = "web422-a4";
+  title:string = "web422";
 
 onActivate(event) {
   window.scroll(0,0);
