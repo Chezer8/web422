@@ -6,7 +6,7 @@
 *
 * Name: _______Chezer Banagua_______________ Student ID: ______106145170________ Date: ______April 9,2020_________
 *
-*               Online Link:   https://silly-albattani-829d3d.netlify.com/home
+*               Online Link:   https://silly-albattani-829d3d.netlify.com
 *
 ********************************************************************************/ 
 
