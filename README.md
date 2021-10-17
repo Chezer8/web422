@@ -2,7 +2,7 @@
 
 This project I created was during my web programming for apps and sevices course at Seneca College as my final assignment.
 
-This is a very simple blog post : https://silly-albattani-829d3d.netlify.app/home
+This is a very simple blog post : https://silly-albattani-829d3d.netlify.app
 
 Created using angular, bootstrap and deployed on netlify
 
